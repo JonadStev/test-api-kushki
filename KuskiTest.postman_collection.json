@@ -1,0 +1,1245 @@
+{
+	"info": {
+		"_postman_id": "83f367da-213b-4165-93a3-55a289fc6a5f",
+		"name": "KuskiTest",
+		"description": "Pruebas funcionales de las APi's de Kushki: void:\r\n* Void a transaction\r\n* Get transactions list",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Void Transaction",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Private-Merchant-Id",
+						"value": "1cd829852f8e4769bfac2dd076320bdc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fullResponse\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-uat.kushkipagos.com/v1/charges/886824797843762650",
+					"protocol": "https",
+					"host": [
+						"api-uat",
+						"kushkipagos",
+						"com"
+					],
+					"path": [
+						"v1",
+						"charges",
+						"886824797843762650"
+					]
+				}
+			},
+			"response": [{
+					"ticketNumber": "661649023572539094",
+					"details": {
+						"acquirerBank": "Banco Pacifico",
+						"saleTicketNumber": "886824797843762650",
+						"creditType": "001",
+						"deferred": {
+							"graceMonths": "02",
+							"creditType": "01",
+							"months": 3
+						},
+						"integrationMethod": null,
+						"processorName": "Datafast Processor",
+						"paymentBrand": "Master Card",
+						"socialReason": "DeveloperJB",
+						"cardType": "credit",
+						"currencyCode": "USD",
+						"country": "Ecuador",
+						"responseCode": "000",
+						"categoryMerchant": null,
+						"publicCredentialId": "54079abff670448a82862ec2e5660e0b",
+						"subtotalIva": 0,
+						"taxId": "1234567890",
+						"security": {
+							"whitelist": false
+						},
+						"plcc": false,
+						"lastFourDigits": "5481",
+						"syncMode": "online",
+						"merchantName": "DeveloperJB",
+						"credentialAlias": "DeveloperJB",
+						"productDetails": {
+							"product": [
+								{
+									"id": "198952AB",
+									"quantity": 1,
+									"title": "eBook Digital Services",
+									"sku": "10101042",
+									"price": 15000
+								},
+								{
+									"id": "198953AB",
+									"quantity": 1,
+									"title": "eBook Virtual Selling",
+									"sku": "004834GQ",
+									"price": 15000
+								}
+							]
+						},
+						"subtotalIva0": 30000,
+						"maskedCardNumber": "54519515XXXX5481",
+						"merchantId": "20000000102672716000",
+						"approvedTransactionAmount": 30000,
+						"metadata": {
+							"Referencia": "987654"
+						},
+						"responseText": "Transacción aprobada",
+						"transactionId": "1649023572539012722",
+						"fullResponse": true,
+						"binCard": "54519515",
+						"ivaValue": 0,
+						"iceValue": 0,
+						"issuingBank": "BANCO DE LA PRODUCCION,S.A. (PRODUBANCO)",
+						"token": "dcee47cbb5ad4b87936400d14861537a",
+						"foreignCard": false,
+						"contactDetails": {
+							"firstName": "Jonathan",
+							"lastName": "Burgos",
+							"phoneNumber": "0978640363",
+							"documentType": "CC",
+							"documentNumber": "0953759083",
+							"email": "ejemplo@gmail.com"
+						},
+						"processorId": "1000001012891044592416488269152",
+						"requestAmount": 30000,
+						"cardHolderName": "Steven Burgos",
+						"userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36",
+						"ip": "181.199.36.207",
+						"transactionStatus": "INITIALIZED",
+						"processorType": "gateway",
+						"created": 1649023432000,
+						"approvalCode": "000000",
+						"graceMonths": "02",
+						"numberOfMonths": 3,
+						"tokenType": "transaction-token",
+						"recap": "534307",
+						"processorMerchantId": "543210",
+						"processorBankName": "0032~BANCO INTERNACIONAL",
+						"credentialId": "98cfcdf1f1c944f8818214a05e835398",
+						"transactionType": "VOID",
+						"orderDetails": {
+							"shippingDetails": {
+								"country": "Ecuador",
+								"phone": "0978640363",
+								"address2": "dir 2",
+								"city": "Guayaquil",
+								"address1": "dir 1",
+								"name": "Jonathan Burgos",
+								"region": "Guayas"
+							},
+							"billingDetails": {
+								"country": "Ecuador",
+								"phone": "0978640363",
+								"address2": "dir 2",
+								"city": "Guayaquil",
+								"address1": "dir 1",
+								"name": "Jonathan Burgos",
+								"region": "Guayas"
+							},
+							"siteDomain": "example.com"
+						},
+						"transactionReference": "0fb6ba4b-4e04-4eb0-9eaa-7a79ac337ffa",
+						"binInfo": {
+							"bank": "BANCO DE LA PRODUCCION,S.A. (PRODUBANCO)",
+							"type": "credit"
+						}
+					}
+				}]
+		},
+		{
+			"name": "Get transactions list",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-TypeContent-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Private-Merchant-Id",
+						"value": "1cd829852f8e4769bfac2dd076320bdc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api-uat.kushkipagos.com/analytics/v1/transactions-list?from=2022-04-01T13:39:00.836&to=2022-04-03T23:00:00.836",
+					"protocol": "https",
+					"host": [
+						"api-uat",
+						"kushkipagos",
+						"com"
+					],
+					"path": [
+						"analytics",
+						"v1",
+						"transactions-list"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "2022-04-01T13:39:00.836"
+						},
+						{
+							"key": "to",
+							"value": "2022-04-03T23:00:00.836"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"total": 10,
+					"data": [
+						{
+							"acquirer_bank": "Banco Pacifico",
+							"approval_code": "000000",
+							"approved_transaction_amount": 30000,
+							"bin_card": "54519515",
+							"card_holder_name": "Steven Burgos",
+							"card_type": "Credit",
+							"consortium_name": null,
+							"contact_details": {
+								"document_number": "0953759073",
+								"document_type": "CC",
+								"email": "steven@gmail.com",
+								"first_name": "Steven",
+								"last_name": "Burgos",
+								"phone_number": "0987640252"
+							},
+							"country": "Ecuador",
+							"created": "2022-04-03T20:02:58.000Z",
+							"credential_alias": "DeveloperJB",
+							"credential_id": "98cfcdf1f1c944f8818214a05e835398",
+							"credit_type": "001",
+							"currency_code": "USD",
+							"foreign_card": false,
+							"grace_months": "02",
+							"ice_value": 0,
+							"issuing_bank": "BANCO DE LA PRODUCCION,S.A. (PRODUBANCO)",
+							"iva_value": 0,
+							"last_four_digits": "5489",
+							"merchant_id": "20000000102672716000",
+							"merchant_name": "DeveloperJB",
+							"metadata": {
+								"Referencia": "987654"
+							},
+							"number_of_months": 3,
+							"payment_brand": "Mastercard",
+							"processor_id": "1000001012891044592416488269152",
+							"processor_name": "Datafast Processor",
+							"processor_type": "gateway",
+							"public_credential_id": "54079abff670448a82862ec2e5660e0b",
+							"recap": "552020",
+							"request_amount": 30000,
+							"response_code": "000",
+							"response_text": "Transaccion aprobada",
+							"subtotal_iva": 0,
+							"subtotal_iva0": 30000,
+							"sync_mode": "online",
+							"ticket_number": "344363276254906496",
+							"transaction_id": "588172237398579320",
+							"transaction_reference": "a35e4ede-5759-48e4-a57c-23a17796c346",
+							"transaction_status": "APPROVAL",
+							"transaction_type": "SALE",
+							"payment_method": "card",
+							"social_reason": "",
+							"merchant_category": "",
+							"tax_id": "",
+							"masked_credit_card": "54519515XXXXXX5489",
+							"security": {
+								"ip": "181.199.36.207",
+								"user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36",
+								"whitelist": false
+							},
+							"string_metadata": "{\"Referencia\":\"987654\"}",
+							"order_details": {
+								"shipping_details": {
+									"country": "Ecuador",
+									"phone": "0987640252",
+									"address2": "dir 2 av2",
+									"city": "Guayaquil",
+									"address1": "dir 1 av1",
+									"name": "Steven Burgos",
+									"region": "Guayas"
+								},
+								"billing_details": {
+									"country": "Ecuador",
+									"phone": "0987640252",
+									"address2": "dir 2 av2",
+									"city": "Guayaquil",
+									"address1": "dir 1 av1",
+									"name": "Steven Burgos",
+									"region": "Guayas"
+								},
+								"site_domain": "example.com"
+							},
+							"product_details": {
+								"product": [
+									{
+										"quantity": 1,
+										"price": 15000,
+										"id": "198952AB",
+										"title": "eBook Digital Services",
+										"sku": "10101042"
+									},
+									{
+										"quantity": 1,
+										"price": 15000,
+										"id": "198953AB",
+										"title": "eBook Virtual Selling",
+										"sku": "004834GQ"
+									}
+								]
+							}
+						},
+						{
+							"acquirer_bank": "Banco Pacifico",
+							"approval_code": "000000",
+							"approved_transaction_amount": 30000,
+							"bin_card": "54519515",
+							"card_holder_name": "Steven Burgos",
+							"card_type": "Credit",
+							"consortium_name": null,
+							"contact_details": {
+								"document_number": "0953759073",
+								"document_type": "CC",
+								"email": "steven@gmail.com",
+								"first_name": "Steven",
+								"last_name": "Burgos",
+								"phone_number": "0978640363"
+							},
+							"country": "Ecuador",
+							"created": "2022-04-03T20:19:39.000Z",
+							"credential_alias": "DeveloperJB",
+							"credential_id": "98cfcdf1f1c944f8818214a05e835398",
+							"credit_type": "001",
+							"currency_code": "USD",
+							"foreign_card": false,
+							"grace_months": "02",
+							"ice_value": 0,
+							"issuing_bank": "BANCO DE LA PRODUCCION,S.A. (PRODUBANCO)",
+							"iva_value": 0,
+							"last_four_digits": "5488",
+							"merchant_id": "20000000102672716000",
+							"merchant_name": "DeveloperJB",
+							"metadata": {
+								"Referencia": "987654"
+							},
+							"number_of_months": 3,
+							"payment_brand": "Mastercard",
+							"processor_id": "1000001012891044592416488269152",
+							"processor_name": "Datafast Processor",
+							"processor_type": "gateway",
+							"public_credential_id": "54079abff670448a82862ec2e5660e0b",
+							"recap": "988551",
+							"request_amount": 30000,
+							"response_code": "000",
+							"response_text": "Transaccion aprobada",
+							"subtotal_iva": 0,
+							"subtotal_iva0": 30000,
+							"sync_mode": "online",
+							"ticket_number": "749318021313197419",
+							"transaction_id": "745819557575085759",
+							"transaction_reference": "b92e936c-8259-4279-a05a-f55f5f5eeef9",
+							"transaction_status": "APPROVAL",
+							"transaction_type": "SALE",
+							"payment_method": "card",
+							"social_reason": "",
+							"merchant_category": "",
+							"tax_id": "",
+							"masked_credit_card": "54519515XXXXXX5488",
+							"security": {
+								"ip": "181.199.36.207",
+								"user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36",
+								"whitelist": false
+							},
+							"string_metadata": "{\"Referencia\":\"987654\"}",
+							"order_details": {
+								"shipping_details": {
+									"country": "Ecuador",
+									"phone": "0978640363",
+									"address2": "dir av2",
+									"city": "Guayaquil",
+									"address1": "dir av1",
+									"name": "Steven Burgos",
+									"region": "Guayas"
+								},
+								"billing_details": {
+									"country": "Ecuador",
+									"phone": "0978640363",
+									"address2": "dir av2",
+									"city": "Guayaquil",
+									"address1": "dir av1",
+									"name": "Steven Burgos",
+									"region": "Guayas"
+								},
+								"site_domain": "example.com"
+							},
+							"product_details": {
+								"product": [
+									{
+										"quantity": 1,
+										"price": 15000,
+										"id": "198952AB",
+										"title": "eBook Digital Services",
+										"sku": "10101042"
+									},
+									{
+										"quantity": 1,
+										"price": 15000,
+										"id": "198953AB",
+										"title": "eBook Virtual Selling",
+										"sku": "004834GQ"
+									}
+								]
+							}
+						},
+						{
+							"acquirer_bank": "Banco Pacifico",
+							"approval_code": "000000",
+							"approved_transaction_amount": 30000,
+							"bin_card": "54519515",
+							"card_holder_name": "Steven Burgos",
+							"card_type": "Credit",
+							"consortium_name": null,
+							"contact_details": {
+								"document_number": "0953759073",
+								"document_type": "CC",
+								"email": "ejemplo@gmail.com",
+								"first_name": "Steven",
+								"last_name": "Burgos",
+								"phone_number": "0978640365"
+							},
+							"country": "Ecuador",
+							"created": "2022-04-03T20:27:46.000Z",
+							"credential_alias": "DeveloperJB",
+							"credential_id": "98cfcdf1f1c944f8818214a05e835398",
+							"credit_type": "001",
+							"currency_code": "USD",
+							"foreign_card": false,
+							"grace_months": "02",
+							"ice_value": 0,
+							"issuing_bank": "BANCO DE LA PRODUCCION,S.A. (PRODUBANCO)",
+							"iva_value": 0,
+							"last_four_digits": "5481",
+							"merchant_id": "20000000102672716000",
+							"merchant_name": "DeveloperJB",
+							"metadata": {
+								"Referencia": "987654"
+							},
+							"number_of_months": 3,
+							"payment_brand": "Mastercard",
+							"processor_id": "1000001012891044592416488269152",
+							"processor_name": "Datafast Processor",
+							"processor_type": "gateway",
+							"public_credential_id": "54079abff670448a82862ec2e5660e0b",
+							"recap": "898306",
+							"request_amount": 30000,
+							"response_code": "000",
+							"response_text": "Transaccion aprobada",
+							"subtotal_iva": 0,
+							"subtotal_iva0": 30000,
+							"sync_mode": "online",
+							"ticket_number": "292126895308415787",
+							"transaction_id": "334194915965408997",
+							"transaction_reference": "57e950ed-4f1d-4aca-bbed-c56598499484",
+							"transaction_status": "APPROVAL",
+							"transaction_type": "SALE",
+							"payment_method": "card",
+							"social_reason": "",
+							"merchant_category": "",
+							"tax_id": "",
+							"masked_credit_card": "54519515XXXXXX5481",
+							"security": {
+								"ip": "181.199.36.207",
+								"user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36",
+								"whitelist": false
+							},
+							"string_metadata": "{\"Referencia\":\"987654\"}",
+							"order_details": {
+								"shipping_details": {
+									"country": "Ecuador",
+									"phone": "0978640365",
+									"address2": "dir 2",
+									"city": "Guayaquil",
+									"address1": "dir 1",
+									"name": "Steven Burgos",
+									"region": "Guayas"
+								},
+								"billing_details": {
+									"country": "Ecuador",
+									"phone": "0978640365",
+									"address2": "dir 2",
+									"city": "Guayaquil",
+									"address1": "dir 1",
+									"name": "Steven Burgos",
+									"region": "Guayas"
+								},
+								"site_domain": "example.com"
+							},
+							"product_details": {
+								"product": [
+									{
+										"quantity": 1,
+										"price": 15000,
+										"id": "198952AB",
+										"title": "eBook Digital Services",
+										"sku": "10101042"
+									},
+									{
+										"quantity": 1,
+										"price": 15000,
+										"id": "198953AB",
+										"title": "eBook Virtual Selling",
+										"sku": "004834GQ"
+									}
+								]
+							}
+						},
+						{
+							"acquirer_bank": "Banco Pacifico",
+							"approval_code": "000000",
+							"approved_transaction_amount": 30000,
+							"bin_card": "54519515",
+							"card_holder_name": "Steven Burgos",
+							"card_type": "Credit",
+							"consortium_name": null,
+							"contact_details": {
+								"document_number": "0953759073",
+								"document_type": "CC",
+								"email": "ejemplo@gmail.com",
+								"first_name": "Steven",
+								"last_name": "Burgos",
+								"phone_number": "0978640363"
+							},
+							"country": "Ecuador",
+							"created": "2022-04-03T20:29:45.000Z",
+							"credential_alias": "DeveloperJB",
+							"credential_id": "98cfcdf1f1c944f8818214a05e835398",
+							"credit_type": "001",
+							"currency_code": "USD",
+							"foreign_card": false,
+							"grace_months": "02",
+							"ice_value": 0,
+							"issuing_bank": "BANCO DE LA PRODUCCION,S.A. (PRODUBANCO)",
+							"iva_value": 0,
+							"last_four_digits": "5489",
+							"merchant_id": "20000000102672716000",
+							"merchant_name": "DeveloperJB",
+							"metadata": {
+								"Referencia": "987654"
+							},
+							"number_of_months": 3,
+							"payment_brand": "Mastercard",
+							"processor_id": "1000001012891044592416488269152",
+							"processor_name": "Datafast Processor",
+							"processor_type": "gateway",
+							"public_credential_id": "54079abff670448a82862ec2e5660e0b",
+							"recap": "857336",
+							"request_amount": 30000,
+							"response_code": "000",
+							"response_text": "Transaccion aprobada",
+							"subtotal_iva": 0,
+							"subtotal_iva0": 30000,
+							"sync_mode": "online",
+							"ticket_number": "124827270556168667",
+							"transaction_id": "880283968429741057",
+							"transaction_reference": "8ee863f0-ace0-449e-a971-5b0aff3269d4",
+							"transaction_status": "APPROVAL",
+							"transaction_type": "SALE",
+							"payment_method": "card",
+							"social_reason": "",
+							"merchant_category": "",
+							"tax_id": "",
+							"masked_credit_card": "54519515XXXXXX5489",
+							"security": {
+								"ip": "181.199.36.207",
+								"user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36",
+								"whitelist": false
+							},
+							"string_metadata": "{\"Referencia\":\"987654\"}",
+							"order_details": {
+								"shipping_details": {
+									"country": "Ecuador",
+									"phone": "0978640363",
+									"address2": "dir 2",
+									"city": "Guayaquil",
+									"address1": "dir 1",
+									"name": "Steven Burgos",
+									"region": "Guayas"
+								},
+								"billing_details": {
+									"country": "Ecuador",
+									"phone": "0978640363",
+									"address2": "dir 2",
+									"city": "Guayaquil",
+									"address1": "dir 1",
+									"name": "Steven Burgos",
+									"region": "Guayas"
+								},
+								"site_domain": "example.com"
+							},
+							"product_details": {
+								"product": [
+									{
+										"quantity": 1,
+										"price": 15000,
+										"id": "198952AB",
+										"title": "eBook Digital Services",
+										"sku": "10101042"
+									},
+									{
+										"quantity": 1,
+										"price": 15000,
+										"id": "198953AB",
+										"title": "eBook Virtual Selling",
+										"sku": "004834GQ"
+									}
+								]
+							}
+						},
+						{
+							"acquirer_bank": "Banco Pacifico",
+							"approval_code": "000000",
+							"approved_transaction_amount": 30000,
+							"bin_card": "54519515",
+							"card_holder_name": "Steven Burgos",
+							"card_type": "Credit",
+							"consortium_name": null,
+							"contact_details": {
+								"document_number": "0953759073",
+								"document_type": "CC",
+								"email": "steven@gmail.com",
+								"first_name": "Steven",
+								"last_name": "Burgos",
+								"phone_number": "0978640363"
+							},
+							"country": "Ecuador",
+							"created": "2022-04-03T20:45:47.000Z",
+							"credential_alias": "DeveloperJB",
+							"credential_id": "98cfcdf1f1c944f8818214a05e835398",
+							"credit_type": "001",
+							"currency_code": "USD",
+							"foreign_card": false,
+							"grace_months": "02",
+							"ice_value": 0,
+							"issuing_bank": "BANCO DE LA PRODUCCION,S.A. (PRODUBANCO)",
+							"iva_value": 0,
+							"last_four_digits": "5488",
+							"merchant_id": "20000000102672716000",
+							"merchant_name": "DeveloperJB",
+							"metadata": {
+								"Referencia": "987654"
+							},
+							"number_of_months": 3,
+							"payment_brand": "Mastercard",
+							"processor_id": "1000001012891044592416488269152",
+							"processor_name": "Datafast Processor",
+							"processor_type": "gateway",
+							"public_credential_id": "54079abff670448a82862ec2e5660e0b",
+							"recap": "921553",
+							"request_amount": 30000,
+							"response_code": "000",
+							"response_text": "Transaccion aprobada",
+							"subtotal_iva": 0,
+							"subtotal_iva0": 30000,
+							"sync_mode": "online",
+							"ticket_number": "758620908738029018",
+							"transaction_id": "534203123743363962",
+							"transaction_reference": "66785fbb-aa75-4443-a5ea-41e9061dcd70",
+							"transaction_status": "APPROVAL",
+							"transaction_type": "SALE",
+							"payment_method": "card",
+							"social_reason": "",
+							"merchant_category": "",
+							"tax_id": "",
+							"masked_credit_card": "54519515XXXXXX5488",
+							"security": {
+								"ip": "181.199.36.207",
+								"user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36",
+								"whitelist": false
+							},
+							"string_metadata": "{\"Referencia\":\"987654\"}",
+							"order_details": {
+								"shipping_details": {
+									"country": "Ecuador",
+									"phone": "0978640363",
+									"address2": "dir 2",
+									"city": "Guayaquil",
+									"address1": "dir1",
+									"name": "Steven Burgos",
+									"region": "Guayas"
+								},
+								"billing_details": {
+									"country": "Ecuador",
+									"phone": "0978640363",
+									"address2": "dir 2",
+									"city": "Guayaquil",
+									"address1": "dir1",
+									"name": "Steven Burgos",
+									"region": "Guayas"
+								},
+								"site_domain": "example.com"
+							},
+							"product_details": {
+								"product": [
+									{
+										"quantity": 1,
+										"price": 15000,
+										"id": "198952AB",
+										"title": "eBook Digital Services",
+										"sku": "10101042"
+									},
+									{
+										"quantity": 1,
+										"price": 15000,
+										"id": "198953AB",
+										"title": "eBook Virtual Selling",
+										"sku": "004834GQ"
+									}
+								]
+							}
+						},
+						{
+							"acquirer_bank": "Banco Pacifico",
+							"approval_code": "000000",
+							"approved_transaction_amount": 30000,
+							"bin_card": "54519515",
+							"card_holder_name": "Steven Burgos",
+							"card_type": "Credit",
+							"consortium_name": null,
+							"contact_details": {
+								"document_number": "0953759073",
+								"document_type": "CC",
+								"email": "ejemplo@gmail.com",
+								"first_name": "Steven",
+								"last_name": "Burgos",
+								"phone_number": "0978640365"
+							},
+							"country": "Ecuador",
+							"created": "2022-04-03T20:52:02.000Z",
+							"credential_alias": "DeveloperJB",
+							"credential_id": "98cfcdf1f1c944f8818214a05e835398",
+							"credit_type": "001",
+							"currency_code": "USD",
+							"foreign_card": false,
+							"grace_months": "02",
+							"ice_value": 0,
+							"issuing_bank": "BANCO DE LA PRODUCCION,S.A. (PRODUBANCO)",
+							"iva_value": 0,
+							"last_four_digits": "5481",
+							"merchant_id": "20000000102672716000",
+							"merchant_name": "DeveloperJB",
+							"metadata": {
+								"Referencia": "987654"
+							},
+							"number_of_months": 3,
+							"payment_brand": "Mastercard",
+							"processor_id": "1000001012891044592416488269152",
+							"processor_name": "Datafast Processor",
+							"processor_type": "gateway",
+							"public_credential_id": "54079abff670448a82862ec2e5660e0b",
+							"recap": "303171",
+							"request_amount": 30000,
+							"response_code": "000",
+							"response_text": "Transaccion aprobada",
+							"subtotal_iva": 0,
+							"subtotal_iva0": 30000,
+							"sync_mode": "online",
+							"ticket_number": "133381479627101755",
+							"transaction_id": "155860603609415654",
+							"transaction_reference": "4f79eb89-fd6a-4da8-9492-3555423efa0e",
+							"transaction_status": "APPROVAL",
+							"transaction_type": "SALE",
+							"payment_method": "card",
+							"social_reason": "",
+							"merchant_category": "",
+							"tax_id": "",
+							"masked_credit_card": "54519515XXXXXX5481",
+							"security": {
+								"ip": "181.199.36.207",
+								"user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36",
+								"whitelist": false
+							},
+							"string_metadata": "{\"Referencia\":\"987654\"}",
+							"order_details": {
+								"shipping_details": {
+									"country": "Ecuador",
+									"phone": "0978640365",
+									"address2": "dir 2",
+									"city": "Guayaquil",
+									"address1": "dir 1",
+									"name": "Steven Burgos",
+									"region": "Guayas"
+								},
+								"billing_details": {
+									"country": "Ecuador",
+									"phone": "0978640365",
+									"address2": "dir 2",
+									"city": "Guayaquil",
+									"address1": "dir 1",
+									"name": "Steven Burgos",
+									"region": "Guayas"
+								},
+								"site_domain": "example.com"
+							},
+							"product_details": {
+								"product": [
+									{
+										"quantity": 1,
+										"price": 15000,
+										"id": "198952AB",
+										"title": "eBook Digital Services",
+										"sku": "10101042"
+									},
+									{
+										"quantity": 1,
+										"price": 15000,
+										"id": "198953AB",
+										"title": "eBook Virtual Selling",
+										"sku": "004834GQ"
+									}
+								]
+							}
+						},
+						{
+							"acquirer_bank": "Banco Pacifico",
+							"approval_code": "000000",
+							"approved_transaction_amount": 30000,
+							"bin_card": "54519515",
+							"card_holder_name": "Steven Burgos",
+							"card_type": "Credit",
+							"consortium_name": null,
+							"contact_details": {
+								"document_number": "0953759073",
+								"document_type": "CC",
+								"email": "steven@gmail.com",
+								"first_name": "Jonathan",
+								"last_name": "Burgos",
+								"phone_number": "0987654654"
+							},
+							"country": "Ecuador",
+							"created": "2022-04-03T20:53:46.000Z",
+							"credential_alias": "DeveloperJB",
+							"credential_id": "98cfcdf1f1c944f8818214a05e835398",
+							"credit_type": "001",
+							"currency_code": "USD",
+							"foreign_card": false,
+							"grace_months": "02",
+							"ice_value": 0,
+							"issuing_bank": "BANCO DE LA PRODUCCION,S.A. (PRODUBANCO)",
+							"iva_value": 0,
+							"last_four_digits": "5489",
+							"merchant_id": "20000000102672716000",
+							"merchant_name": "DeveloperJB",
+							"metadata": {
+								"Referencia": "987654"
+							},
+							"number_of_months": 3,
+							"payment_brand": "Mastercard",
+							"processor_id": "1000001012891044592416488269152",
+							"processor_name": "Datafast Processor",
+							"processor_type": "gateway",
+							"public_credential_id": "54079abff670448a82862ec2e5660e0b",
+							"recap": "303304",
+							"request_amount": 30000,
+							"response_code": "000",
+							"response_text": "Transaccion aprobada",
+							"subtotal_iva": 0,
+							"subtotal_iva0": 30000,
+							"sync_mode": "online",
+							"ticket_number": "287712330128280955",
+							"transaction_id": "062314002660116343",
+							"transaction_reference": "a4685c0a-c108-42ac-9f27-2684796a0cb0",
+							"transaction_status": "APPROVAL",
+							"transaction_type": "SALE",
+							"payment_method": "card",
+							"social_reason": "",
+							"merchant_category": "",
+							"tax_id": "",
+							"masked_credit_card": "54519515XXXXXX5489",
+							"security": {
+								"ip": "181.199.36.207",
+								"user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36",
+								"whitelist": false
+							},
+							"string_metadata": "{\"Referencia\":\"987654\"}",
+							"order_details": {
+								"shipping_details": {
+									"country": "Ecuador",
+									"phone": "0987654654",
+									"address2": "dr 2",
+									"city": "Guayaquil",
+									"address1": "dr 1",
+									"name": "Jonathan Burgos",
+									"region": "Guayas"
+								},
+								"billing_details": {
+									"country": "Ecuador",
+									"phone": "0987654654",
+									"address2": "dr 2",
+									"city": "Guayaquil",
+									"address1": "dr 1",
+									"name": "Jonathan Burgos",
+									"region": "Guayas"
+								},
+								"site_domain": "example.com"
+							},
+							"product_details": {
+								"product": [
+									{
+										"quantity": 1,
+										"price": 15000,
+										"id": "198952AB",
+										"title": "eBook Digital Services",
+										"sku": "10101042"
+									},
+									{
+										"quantity": 1,
+										"price": 15000,
+										"id": "198953AB",
+										"title": "eBook Virtual Selling",
+										"sku": "004834GQ"
+									}
+								]
+							}
+						},
+						{
+							"acquirer_bank": "Banco Pacifico",
+							"approval_code": "000000",
+							"approved_transaction_amount": 30000,
+							"bin_card": "54519515",
+							"card_holder_name": "Steven Burgos",
+							"card_type": "Credit",
+							"consortium_name": null,
+							"contact_details": {
+								"document_number": "0953759073",
+								"document_type": "CC",
+								"email": "stevenjonathan11@hotmail.com",
+								"first_name": "Steven",
+								"last_name": "Burgos",
+								"phone_number": "0978640363"
+							},
+							"country": "Ecuador",
+							"created": "2022-04-03T21:29:18.000Z",
+							"credential_alias": "DeveloperJB",
+							"credential_id": "98cfcdf1f1c944f8818214a05e835398",
+							"credit_type": "001",
+							"currency_code": "USD",
+							"foreign_card": false,
+							"grace_months": "02",
+							"ice_value": 0,
+							"issuing_bank": "BANCO DE LA PRODUCCION,S.A. (PRODUBANCO)",
+							"iva_value": 0,
+							"last_four_digits": "5481",
+							"merchant_id": "20000000102672716000",
+							"merchant_name": "DeveloperJB",
+							"metadata": {
+								"Referencia": "987654"
+							},
+							"number_of_months": 3,
+							"payment_brand": "Mastercard",
+							"processor_id": "1000001012891044592416488269152",
+							"processor_name": "Datafast Processor",
+							"processor_type": "gateway",
+							"public_credential_id": "54079abff670448a82862ec2e5660e0b",
+							"recap": "209119",
+							"request_amount": 30000,
+							"response_code": "000",
+							"response_text": "Transaccion aprobada",
+							"subtotal_iva": 0,
+							"subtotal_iva0": 30000,
+							"sync_mode": "online",
+							"ticket_number": "749111796317880225",
+							"transaction_id": "521360672276580806",
+							"transaction_reference": "0c8a61cd-9150-4003-b250-f068bcc9476a",
+							"transaction_status": "APPROVAL",
+							"transaction_type": "SALE",
+							"payment_method": "card",
+							"social_reason": "",
+							"merchant_category": "",
+							"tax_id": "",
+							"masked_credit_card": "54519515XXXXXX5481",
+							"security": {
+								"ip": "181.199.36.207",
+								"user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36",
+								"whitelist": false
+							},
+							"string_metadata": "{\"Referencia\":\"987654\"}",
+							"order_details": {
+								"shipping_details": {
+									"country": "Ecuador",
+									"phone": "0978640363",
+									"address2": "dir2",
+									"city": "Guayaquil",
+									"address1": "dir 1",
+									"name": "Steven Burgos",
+									"region": "Guayas"
+								},
+								"billing_details": {
+									"country": "Ecuador",
+									"phone": "0978640363",
+									"address2": "dir2",
+									"city": "Guayaquil",
+									"address1": "dir 1",
+									"name": "Steven Burgos",
+									"region": "Guayas"
+								},
+								"site_domain": "example.com"
+							},
+							"product_details": {
+								"product": [
+									{
+										"quantity": 1,
+										"price": 15000,
+										"id": "198952AB",
+										"title": "eBook Digital Services",
+										"sku": "10101042"
+									},
+									{
+										"quantity": 1,
+										"price": 15000,
+										"id": "198953AB",
+										"title": "eBook Virtual Selling",
+										"sku": "004834GQ"
+									}
+								]
+							}
+						},
+						{
+							"acquirer_bank": "Banco Pacifico",
+							"approval_code": "000000",
+							"approved_transaction_amount": 30000,
+							"bin_card": "54519515",
+							"card_holder_name": "Steven Burgos",
+							"card_type": "Credit",
+							"consortium_name": null,
+							"contact_details": {
+								"document_number": "0953759083",
+								"document_type": "CC",
+								"email": "ejemplo@gmail.com",
+								"first_name": "Jonathan",
+								"last_name": "Burgos",
+								"phone_number": "0978640363"
+							},
+							"country": "Ecuador",
+							"created": "2022-04-03T22:03:52.000Z",
+							"credential_alias": "DeveloperJB",
+							"credential_id": "98cfcdf1f1c944f8818214a05e835398",
+							"credit_type": "001",
+							"currency_code": "USD",
+							"foreign_card": false,
+							"grace_months": "02",
+							"ice_value": 0,
+							"issuing_bank": "BANCO DE LA PRODUCCION,S.A. (PRODUBANCO)",
+							"iva_value": 0,
+							"last_four_digits": "5481",
+							"merchant_id": "20000000102672716000",
+							"merchant_name": "DeveloperJB",
+							"metadata": {
+								"Referencia": "987654"
+							},
+							"number_of_months": 3,
+							"payment_brand": "Mastercard",
+							"processor_id": "1000001012891044592416488269152",
+							"processor_name": "Datafast Processor",
+							"processor_type": "gateway",
+							"public_credential_id": "54079abff670448a82862ec2e5660e0b",
+							"recap": "534307",
+							"request_amount": 30000,
+							"response_code": "000",
+							"response_text": "Transaccion aprobada",
+							"subtotal_iva": 0,
+							"subtotal_iva0": 30000,
+							"sync_mode": "online",
+							"ticket_number": "886824797843762650",
+							"transaction_id": "349969460224538367",
+							"transaction_reference": "ca043213-f7e9-4aa5-83a7-540dc76d1157",
+							"transaction_status": "APPROVAL",
+							"transaction_type": "SALE",
+							"payment_method": "card",
+							"social_reason": "",
+							"merchant_category": "",
+							"tax_id": "",
+							"masked_credit_card": "54519515XXXXXX5481",
+							"security": {
+								"ip": "181.199.36.207",
+								"user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36",
+								"whitelist": false
+							},
+							"string_metadata": "{\"Referencia\":\"987654\"}",
+							"order_details": {
+								"shipping_details": {
+									"country": "Ecuador",
+									"phone": "0978640363",
+									"address2": "dir 2",
+									"city": "Guayaquil",
+									"address1": "dir 1",
+									"name": "Jonathan Burgos",
+									"region": "Guayas"
+								},
+								"billing_details": {
+									"country": "Ecuador",
+									"phone": "0978640363",
+									"address2": "dir 2",
+									"city": "Guayaquil",
+									"address1": "dir 1",
+									"name": "Jonathan Burgos",
+									"region": "Guayas"
+								},
+								"site_domain": "example.com"
+							},
+							"product_details": {
+								"product": [
+									{
+										"quantity": 1,
+										"price": 15000,
+										"id": "198952AB",
+										"title": "eBook Digital Services",
+										"sku": "10101042"
+									},
+									{
+										"quantity": 1,
+										"price": 15000,
+										"id": "198953AB",
+										"title": "eBook Virtual Selling",
+										"sku": "004834GQ"
+									}
+								]
+							}
+						},
+						{
+							"approved_transaction_amount": 30000,
+							"aurus_ticket_number": "886824797843762650",
+							"bin_card": "54519515",
+							"card_country": "Ecuador",
+							"card_country_code": "EC",
+							"card_holder_name": "Steven Burgos",
+							"card_type": "Credit",
+							"consortium_name": null,
+							"contact_person": "Jonathan Burgos",
+							"country": "Ecuador",
+							"created": "2022-04-03T22:06:23.626Z",
+							"credential_alias": null,
+							"credential_id": null,
+							"credential_metadata": {},
+							"currency_code": "USD",
+							"email": "stevenjonathan1@hotmail.com",
+							"foreign_card": false,
+							"historical": [
+								{
+									"approved_transaction_amount": 30000,
+									"bin_card": "54519515",
+									"card_country": "Ecuador",
+									"card_country_code": "EC",
+									"card_holder_name": "Steven Burgos",
+									"card_type": "Credit",
+									"consortium_name": null,
+									"contact_person": "Jonathan Burgos",
+									"country": "Ecuador",
+									"created": "2022-04-03T22:06:12.642Z",
+									"credential_alias": null,
+									"credential_id": null,
+									"credential_metadata": {},
+									"currency_code": "USD",
+									"email": "stevenjonathan1@hotmail.com",
+									"foreign_card": false,
+									"ice_value": 0,
+									"iva_value": 0,
+									"last_four_digits": "5481",
+									"masked_credit_card": "54519515XXXXXX5481",
+									"merchant_category": "",
+									"merchant_id": "20000000102672716000",
+									"merchant_name": "DeveloperJB",
+									"nit": "1234567890",
+									"payment_brand": "Mastercard",
+									"payment_method": "card",
+									"processor_id": "1000001012891044592416488269152",
+									"processor_merchant_id": "543210",
+									"processor_name": "Datafast Processor",
+									"processor_type": "gateway",
+									"public_credential_id": null,
+									"recap": "534307",
+									"request_amount": 30000,
+									"response_code": "000",
+									"response_text": "Transacción aprobada",
+									"sale_approval_code": "000000",
+									"sale_ticket_number": "886824797843762650",
+									"sale_transaction_type": "SALE",
+									"social_reason": "DeveloperJB",
+									"subtotal_iva": 0,
+									"subtotal_iva0": 30000,
+									"sync_mode": "online",
+									"tax_id": "1234567890",
+									"terminal_id": "24242424",
+									"ticket_number": "661649023572539094",
+									"transaction_id": "1649023572539012722",
+									"transaction_reference": "0fb6ba4b-4e04-4eb0-9eaa-7a79ac337ffa",
+									"transaction_status": "INITIALIZED",
+									"transaction_type": "VOID",
+									"unique_code": null,
+									"visibility": "visible"
+								}
+							],
+							"ice_value": 0,
+							"iva_value": 0,
+							"last_four_digits": "5481",
+							"masked_credit_card": "54519515XXXXXX5481",
+							"merchant_category": "",
+							"merchant_id": "20000000102672716000",
+							"merchant_name": "DeveloperJB",
+							"nit": "1234567890",
+							"payment_brand": "Mastercard",
+							"payment_method": "card",
+							"processor_id": "1000001012891044592416488269152",
+							"processor_merchant_id": "543210",
+							"processor_name": "Datafast Processor",
+							"processor_type": "gateway",
+							"public_credential_id": null,
+							"request_amount": 30000,
+							"response_code": "000",
+							"response_text": "Transacción aprobada",
+							"sale_approval_code": "000000",
+							"sale_ticket_number": "886824797843762650",
+							"sale_transaction_type": "SALE",
+							"social_reason": "DeveloperJB",
+							"subtotal_iva": 0,
+							"subtotal_iva0": 30000,
+							"sync_mode": "online",
+							"tax_id": "1234567890",
+							"terminal_id": "24242424",
+							"ticket_number": "661649023572539094",
+							"transaction_id": "349969460224538367",
+							"transaction_reference": "e3334967-5e8c-454d-b058-b41c2a7b75ea",
+							"transaction_status": "APPROVAL",
+							"transaction_type": "VOID",
+							"unique_code": null,
+							"visibility": "visible",
+							"void_ticket_number": "661649023572539094"
+						}
+					]
+				}
+			]
+		}
+	]
+}
