@@ -1,0 +1,129 @@
+Request: 
+
+curl --location --request DELETE 'https://api-uat.kushkipagos.com/v1/charges/886824797843762650' \
+--header 'Content-Type: application/json' \
+--header 'Private-Merchant-Id: 1cd829852f8e4769bfac2dd076320bdc' \
+--data-raw '{
+  "fullResponse": true
+}'
+
+Response:
+
+{
+    "ticketNumber": "661649023572539094",
+    "details": {
+        "acquirerBank": "Banco Pacifico",
+        "saleTicketNumber": "886824797843762650",
+        "creditType": "001",
+        "deferred": {
+            "graceMonths": "02",
+            "creditType": "01",
+            "months": 3
+        },
+        "integrationMethod": null,
+        "processorName": "Datafast Processor",
+        "paymentBrand": "Master Card",
+        "socialReason": "DeveloperJB",
+        "cardType": "credit",
+        "currencyCode": "USD",
+        "country": "Ecuador",
+        "responseCode": "000",
+        "categoryMerchant": null,
+        "publicCredentialId": "54079abff670448a82862ec2e5660e0b",
+        "subtotalIva": 0,
+        "taxId": "1234567890",
+        "security": {
+            "whitelist": false
+        },
+        "plcc": false,
+        "lastFourDigits": "5481",
+        "syncMode": "online",
+        "merchantName": "DeveloperJB",
+        "credentialAlias": "DeveloperJB",
+        "productDetails": {
+            "product": [
+                {
+                    "id": "198952AB",
+                    "quantity": 1,
+                    "title": "eBook Digital Services",
+                    "sku": "10101042",
+                    "price": 15000
+                },
+                {
+                    "id": "198953AB",
+                    "quantity": 1,
+                    "title": "eBook Virtual Selling",
+                    "sku": "004834GQ",
+                    "price": 15000
+                }
+            ]
+        },
+        "subtotalIva0": 30000,
+        "maskedCardNumber": "54519515XXXX5481",
+        "merchantId": "20000000102672716000",
+        "approvedTransactionAmount": 30000,
+        "metadata": {
+            "Referencia": "987654"
+        },
+        "responseText": "Transacción aprobada",
+        "transactionId": "1649023572539012722",
+        "fullResponse": true,
+        "binCard": "54519515",
+        "ivaValue": 0,
+        "iceValue": 0,
+        "issuingBank": "BANCO DE LA PRODUCCION,S.A. (PRODUBANCO)",
+        "token": "dcee47cbb5ad4b87936400d14861537a",
+        "foreignCard": false,
+        "contactDetails": {
+            "firstName": "Jonathan",
+            "lastName": "Burgos",
+            "phoneNumber": "0978640363",
+            "documentType": "CC",
+            "documentNumber": "0953759083",
+            "email": "ejemplo@gmail.com"
+        },
+        "processorId": "1000001012891044592416488269152",
+        "requestAmount": 30000,
+        "cardHolderName": "Steven Burgos",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36",
+        "ip": "181.199.36.207",
+        "transactionStatus": "INITIALIZED",
+        "processorType": "gateway",
+        "created": 1649023572000,
+        "approvalCode": "000000",
+        "graceMonths": "02",
+        "numberOfMonths": 3,
+        "tokenType": "transaction-token",
+        "recap": "534307",
+        "processorMerchantId": "543210",
+        "processorBankName": "0032~BANCO INTERNACIONAL",
+        "credentialId": "98cfcdf1f1c944f8818214a05e835398",
+        "transactionType": "VOID",
+        "orderDetails": {
+            "shippingDetails": {
+                "country": "Ecuador",
+                "phone": "0978640363",
+                "address2": "dir 2",
+                "city": "Guayaquil",
+                "address1": "dir 1",
+                "name": "Jonathan Burgos",
+                "region": "Guayas"
+            },
+            "billingDetails": {
+                "country": "Ecuador",
+                "phone": "0978640363",
+                "address2": "dir 2",
+                "city": "Guayaquil",
+                "address1": "dir 1",
+                "name": "Jonathan Burgos",
+                "region": "Guayas"
+            },
+            "siteDomain": "example.com"
+        },
+        "transactionReference": "0fb6ba4b-4e04-4eb0-9eaa-7a79ac337ffa",
+        "binInfo": {
+            "bank": "BANCO DE LA PRODUCCION,S.A. (PRODUBANCO)",
+            "type": "credit"
+        }
+    }
+}
